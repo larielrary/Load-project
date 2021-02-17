@@ -119,10 +119,14 @@
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="ExitBtn.Location" type="System.Drawing.Point, System.Drawing">
-    <value>386, 128</value>
+    <value>482, 156</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="ExitBtn.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="ExitBtn.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 30</value>
+    <value>94, 37</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="ExitBtn.TabIndex" type="System.Int32, mscorlib">
@@ -141,13 +145,16 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;ExitBtn.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="YearLoadBtn.Location" type="System.Drawing.Point, System.Drawing">
-    <value>27, 55</value>
+    <value>34, 67</value>
+  </data>
+  <data name="YearLoadBtn.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="YearLoadBtn.Size" type="System.Drawing.Size, System.Drawing">
-    <value>172, 36</value>
+    <value>215, 44</value>
   </data>
   <data name="YearLoadBtn.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -165,17 +172,19 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;YearLoadBtn.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="TeacherLoadBtn.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="TeacherLoadBtn.Location" type="System.Drawing.Point, System.Drawing">
-    <value>244, 55</value>
+    <value>305, 67</value>
+  </data>
+  <data name="TeacherLoadBtn.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="TeacherLoadBtn.Size" type="System.Drawing.Size, System.Drawing">
-    <value>217, 36</value>
+    <value>271, 44</value>
   </data>
   <data name="TeacherLoadBtn.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -193,22 +202,46 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;TeacherLoadBtn.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="exportToAccessBtn.Location" type="System.Drawing.Point, System.Drawing">
+    <value>34, 135</value>
+  </data>
+  <data name="exportToAccessBtn.Size" type="System.Drawing.Size, System.Drawing">
+    <value>215, 44</value>
+  </data>
+  <data name="exportToAccessBtn.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="exportToAccessBtn.Text" xml:space="preserve">
+    <value>Экспорт данных</value>
+  </data>
+  <data name="&gt;&gt;exportToAccessBtn.Name" xml:space="preserve">
+    <value>exportToAccessBtn</value>
+  </data>
+  <data name="&gt;&gt;exportToAccessBtn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;exportToAccessBtn.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;exportToAccessBtn.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>8, 23</value>
+    <value>10, 28</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>491, 176</value>
+    <value>614, 214</value>
   </data>
   <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe Print, 9.75pt</value>
   </data>
   <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 6, 4, 6</value>
+    <value>5, 7, 5, 7</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>

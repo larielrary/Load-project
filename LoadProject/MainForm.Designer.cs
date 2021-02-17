@@ -32,6 +32,7 @@
             this.ExitBtn = new System.Windows.Forms.Button();
             this.YearLoadBtn = new System.Windows.Forms.Button();
             this.TeacherLoadBtn = new System.Windows.Forms.Button();
+            this.exportToAccessBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // ExitBtn
@@ -55,11 +56,19 @@
             this.TeacherLoadBtn.UseVisualStyleBackColor = true;
             this.TeacherLoadBtn.Click += new System.EventHandler(this.TeacherBtnClick);
             // 
+            // exportToAccessBtn
+            // 
+            resources.ApplyResources(this.exportToAccessBtn, "exportToAccessBtn");
+            this.exportToAccessBtn.Name = "exportToAccessBtn";
+            this.exportToAccessBtn.UseVisualStyleBackColor = true;
+            this.exportToAccessBtn.Click += new System.EventHandler(this.exportToAccessBtnClick);
+            // 
             // MainForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ControlBox = false;
+            this.Controls.Add(this.exportToAccessBtn);
             this.Controls.Add(this.TeacherLoadBtn);
             this.Controls.Add(this.YearLoadBtn);
             this.Controls.Add(this.ExitBtn);
@@ -73,6 +82,7 @@
         private System.Windows.Forms.Button ExitBtn;
         private System.Windows.Forms.Button YearLoadBtn;
         private System.Windows.Forms.Button TeacherLoadBtn;
+        private System.Windows.Forms.Button exportToAccessBtn;
     }
 }
 

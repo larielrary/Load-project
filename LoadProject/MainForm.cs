@@ -39,5 +39,10 @@ namespace LoadProject
             p.StartInfo.FileName = @"C:\Users\masha\OneDrive\Учеба\4 курс\УРПО\ConsoleApp2\ConsoleApp2\bin\Debug\netcoreapp3.1\ConsoleApp2.exe";
             p.Start();
         }
+
+        private void exportToAccessBtnClick(object sender, EventArgs e)
+        {
+
+        }
     }
 }
