@@ -28,52 +28,69 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            this.ExitBtn = new System.Windows.Forms.Button();
-            this.YearLoadBtn = new System.Windows.Forms.Button();
-            this.TeacherLoadBtn = new System.Windows.Forms.Button();
-            this.exportToAccessBtn = new System.Windows.Forms.Button();
-            this.SuspendLayout();
-            // 
-            // ExitBtn
-            // 
-            resources.ApplyResources(this.ExitBtn, "ExitBtn");
-            this.ExitBtn.Name = "ExitBtn";
-            this.ExitBtn.UseVisualStyleBackColor = true;
-            this.ExitBtn.Click += new System.EventHandler(this.ExitBtnClick);
-            // 
-            // YearLoadBtn
-            // 
-            resources.ApplyResources(this.YearLoadBtn, "YearLoadBtn");
-            this.YearLoadBtn.Name = "YearLoadBtn";
-            this.YearLoadBtn.UseVisualStyleBackColor = true;
-            this.YearLoadBtn.Click += new System.EventHandler(this.YearBtnClick);
-            // 
-            // TeacherLoadBtn
-            // 
-            resources.ApplyResources(this.TeacherLoadBtn, "TeacherLoadBtn");
-            this.TeacherLoadBtn.Name = "TeacherLoadBtn";
-            this.TeacherLoadBtn.UseVisualStyleBackColor = true;
-            this.TeacherLoadBtn.Click += new System.EventHandler(this.TeacherBtnClick);
-            // 
-            // exportToAccessBtn
-            // 
-            resources.ApplyResources(this.exportToAccessBtn, "exportToAccessBtn");
-            this.exportToAccessBtn.Name = "exportToAccessBtn";
-            this.exportToAccessBtn.UseVisualStyleBackColor = true;
-            this.exportToAccessBtn.Click += new System.EventHandler(this.exportToAccessBtnClick);
-            // 
-            // MainForm
-            // 
-            resources.ApplyResources(this, "$this");
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ControlBox = false;
-            this.Controls.Add(this.exportToAccessBtn);
-            this.Controls.Add(this.TeacherLoadBtn);
-            this.Controls.Add(this.YearLoadBtn);
-            this.Controls.Add(this.ExitBtn);
-            this.Name = "MainForm";
-            this.ResumeLayout(false);
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
+			this.ExitBtn = new System.Windows.Forms.Button();
+			this.YearLoadBtn = new System.Windows.Forms.Button();
+			this.TeacherLoadBtn = new System.Windows.Forms.Button();
+			this.exportToAccessBtn = new System.Windows.Forms.Button();
+			this.choosePath = new System.Windows.Forms.Button();
+			this.path = new System.Windows.Forms.TextBox();
+			this.SuspendLayout();
+			// 
+			// ExitBtn
+			// 
+			resources.ApplyResources(this.ExitBtn, "ExitBtn");
+			this.ExitBtn.Name = "ExitBtn";
+			this.ExitBtn.UseVisualStyleBackColor = true;
+			this.ExitBtn.Click += new System.EventHandler(this.ExitBtnClick);
+			// 
+			// YearLoadBtn
+			// 
+			resources.ApplyResources(this.YearLoadBtn, "YearLoadBtn");
+			this.YearLoadBtn.Name = "YearLoadBtn";
+			this.YearLoadBtn.UseVisualStyleBackColor = true;
+			this.YearLoadBtn.Click += new System.EventHandler(this.YearBtnClick);
+			// 
+			// TeacherLoadBtn
+			// 
+			resources.ApplyResources(this.TeacherLoadBtn, "TeacherLoadBtn");
+			this.TeacherLoadBtn.Name = "TeacherLoadBtn";
+			this.TeacherLoadBtn.UseVisualStyleBackColor = true;
+			this.TeacherLoadBtn.Click += new System.EventHandler(this.TeacherBtnClick);
+			// 
+			// exportToAccessBtn
+			// 
+			resources.ApplyResources(this.exportToAccessBtn, "exportToAccessBtn");
+			this.exportToAccessBtn.Name = "exportToAccessBtn";
+			this.exportToAccessBtn.UseVisualStyleBackColor = true;
+			this.exportToAccessBtn.Click += new System.EventHandler(this.exportToAccessBtnClick);
+			// 
+			// choosePath
+			// 
+			resources.ApplyResources(this.choosePath, "choosePath");
+			this.choosePath.Name = "choosePath";
+			this.choosePath.UseVisualStyleBackColor = true;
+			this.choosePath.Click += new System.EventHandler(this.choosePath_Click);
+			// 
+			// path
+			// 
+			resources.ApplyResources(this.path, "path");
+			this.path.Name = "path";
+			// 
+			// MainForm
+			// 
+			resources.ApplyResources(this, "$this");
+			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.ControlBox = false;
+			this.Controls.Add(this.path);
+			this.Controls.Add(this.choosePath);
+			this.Controls.Add(this.exportToAccessBtn);
+			this.Controls.Add(this.TeacherLoadBtn);
+			this.Controls.Add(this.YearLoadBtn);
+			this.Controls.Add(this.ExitBtn);
+			this.Name = "MainForm";
+			this.ResumeLayout(false);
+			this.PerformLayout();
 
         }
 
@@ -83,6 +100,8 @@
         private System.Windows.Forms.Button YearLoadBtn;
         private System.Windows.Forms.Button TeacherLoadBtn;
         private System.Windows.Forms.Button exportToAccessBtn;
-    }
+		private System.Windows.Forms.Button choosePath;
+		private System.Windows.Forms.TextBox path;
+	}
 }
 
