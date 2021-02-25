@@ -51,5 +51,10 @@ namespace LoadProject
             Configuration configuration = new Configuration();
             configuration.Show();
         }
+
+        private void loadJarBtnClick(object sender, EventArgs e)
+        {
+
+        }
     }
 }

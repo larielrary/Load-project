@@ -34,6 +34,7 @@
             this.TeacherLoadBtn = new System.Windows.Forms.Button();
             this.exportToAccessBtn = new System.Windows.Forms.Button();
             this.configurationBtn = new System.Windows.Forms.Button();
+            this.loadJarBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // ExitBtn
@@ -71,11 +72,19 @@
             this.configurationBtn.UseVisualStyleBackColor = true;
             this.configurationBtn.Click += new System.EventHandler(this.configurationBtnClick);
             // 
+            // loadJarBtn
+            // 
+            resources.ApplyResources(this.loadJarBtn, "loadJarBtn");
+            this.loadJarBtn.Name = "loadJarBtn";
+            this.loadJarBtn.UseVisualStyleBackColor = true;
+            this.loadJarBtn.Click += new System.EventHandler(this.loadJarBtnClick);
+            // 
             // MainForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ControlBox = false;
+            this.Controls.Add(this.loadJarBtn);
             this.Controls.Add(this.configurationBtn);
             this.Controls.Add(this.exportToAccessBtn);
             this.Controls.Add(this.TeacherLoadBtn);
@@ -93,6 +102,7 @@
         private System.Windows.Forms.Button TeacherLoadBtn;
         private System.Windows.Forms.Button exportToAccessBtn;
         private System.Windows.Forms.Button configurationBtn;
+        private System.Windows.Forms.Button loadJarBtn;
     }
 }
 
