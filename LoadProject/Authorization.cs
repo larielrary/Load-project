@@ -22,7 +22,7 @@ namespace LoadProject
         public Authorization()
         {
              InitializeComponent();
-             writeToFile("login", Encryption("pass"));
+             WriteToFile("login", Encryption("pass"));
 
         }
 
@@ -45,7 +45,7 @@ namespace LoadProject
         public void CheckInputData()
         {
 
-            string readTextFromFile = readFile();
+            string readTextFromFile = ReadFile();
             String[] words = readTextFromFile.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
             string pasFrFile= AesOperation.DecryptString(key, words[1]);
             _login = loginTextBox.Text;
@@ -78,7 +78,7 @@ namespace LoadProject
             return encryptedString;
         }
 
-        public void writeToFile(string login,string password)
+        public void WriteToFile(string login,string password)
 		{
             string text = login + " " + password;
             string path = Environment.CurrentDirectory+ "\\file.txt";
@@ -89,7 +89,7 @@ namespace LoadProject
             }
         }
 
-        public string readFile()
+        public string ReadFile()
 		{
             string textFromFile = string.Empty;
             string path = Environment.CurrentDirectory;
