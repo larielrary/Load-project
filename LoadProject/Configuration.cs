@@ -45,5 +45,12 @@ namespace LoadProject
             }
             // MessageBox.Show(fileContent, "File Content at path: " + filePath, MessageBoxButtons.OK);
         }
-    }
+
+		private void button2_Click(object sender, EventArgs e)
+		{
+            MainForm mainForm = new MainForm();
+            mainForm.Show();
+            Hide();
+        }
+	}
 }

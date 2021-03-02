@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.OleDb;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -56,5 +57,46 @@ namespace LoadProject
         {
 
         }
-    }
+
+		private void MainForm_Load(object sender, EventArgs e)
+		{
+
+		}
+
+        private void FunctionForExportJsonToAccess()
+		{
+            OleDbConnection conn = new OleDbConnection();
+            conn.ConnectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source= C:\Users\tlwhitten\Documents\Database2.accdb";
+
+            int CO2 = 50;
+            int Temperature = 50;
+
+            OleDbCommand cmd = new OleDbCommand("INSERT into Data (CO2, Temperature) Values(@CO2, @Temperature)");
+            cmd.Connection = conn;
+
+            conn.Open();
+
+            if (conn.State == ConnectionState.Open)
+            {
+                cmd.Parameters.Add("@CO2", OleDbType.VarChar).Value = CO2;
+                cmd.Parameters.Add("@Temperature", OleDbType.VarChar).Value = Temperature;
+
+                try
+                {
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Data Added");
+                    conn.Close();
+                }
+                catch (OleDbException ex)
+                {
+                    MessageBox.Show(ex.Source + " POOOOOPY");
+                    conn.Close();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Connection Failed");
+            }
+        }
+	}
 }
