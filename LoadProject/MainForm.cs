@@ -9,8 +9,8 @@ namespace LoadProject
 {
     public partial class MainForm : Form
     {
-        private const string JsonParserFileName = "JSONParser.jar";
-        private const string JsonDataFileName = "data.json";
+        private const string _jsonParserFileName = "JSONParser.jar";
+        private const string _jsonDataFileName = "data.json";
 
         public MainForm()
         {
@@ -53,10 +53,10 @@ namespace LoadProject
 
         private void loadJarBtnClick(object sender, EventArgs e)
         {
-            string filePath = $"{Environment.CurrentDirectory}\\{JsonParserFileName}";
+            string filePath = $"{Environment.CurrentDirectory}\\{_jsonParserFileName}";
             if (File.Exists(filePath))
             {
-                Process.Start("java", $"-jar {filePath} {JsonDataFileName}");
+                Process.Start("java", $"-jar {filePath} {_jsonDataFileName}");
             }
             else
             {
