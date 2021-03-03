@@ -1,5 +1,7 @@
 ﻿using System;
 using System.IO;
+using System.Security.Cryptography;
+using System.Text;
 using System.Windows.Forms;
 
 namespace LoadProject
@@ -9,12 +11,10 @@ namespace LoadProject
         private string _login;
         private string _password;
         MainForm mainForm;
-        public string key = "b14ca5898a4e4133bbce2ea2315a1916";
+
         public Authorization()
         {
              InitializeComponent();
-             WriteToFile("login", Encryption("pass"));
-
         }
 
         private void ExitBtnClick(object sender, EventArgs e)
@@ -35,11 +35,11 @@ namespace LoadProject
 
         public void CheckInputData()
         {
+            (string, string) creds = FileProcessor.ReadCredentialsFromFile();
 
-            string pasFrFile= AesOperation.DecryptString(key, words[1]);
             _login = loginTextBox.Text;
             _password = passTextBox.Text;
-            if (_login == words[0] && _password == pasFrFile)
+            if (GetHash(_login) == creds.Item1 && GetHash(_password) == creds.Item2)
             {
                 mainForm = new MainForm();
                 mainForm.Show();
@@ -61,11 +61,11 @@ namespace LoadProject
 
 		}
 
-        public string Encryption(string password)
-		{
-            var encryptedString = AesOperation.EncryptString(key, password);
-            return encryptedString;
+        public string GetHash(string line)
+        {
+            var md5 = MD5.Create();
+            var hash = md5.ComputeHash(Encoding.UTF8.GetBytes(line));
+            return Convert.ToBase64String(hash);
         }
-
-        }
+    }
 }
