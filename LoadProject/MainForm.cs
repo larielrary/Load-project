@@ -1,19 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.OleDb;
-using System.Drawing;
+using System.Diagnostics;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace LoadProject
 {
     public partial class MainForm : Form
     {
+        private const string JsonParserFileName = "JSONParser.jar";
+        private const string JsonDataFileName = "data.json";
+
         public MainForm()
         {
             InitializeComponent();
@@ -37,7 +35,7 @@ namespace LoadProject
         private void TeacherBtnClick(object sender, EventArgs e)
         {
             //запуск exe нагрузки по преподавателю
-            System.Diagnostics.Process p = new System.Diagnostics.Process();
+            Process p = new Process();
             p.StartInfo.FileName = @"C:\Users\masha\OneDrive\Учеба\4 курс\УРПО\ConsoleApp2\ConsoleApp2\bin\Debug\netcoreapp3.1\ConsoleApp2.exe";
             p.Start();
         }
@@ -55,7 +53,15 @@ namespace LoadProject
 
         private void loadJarBtnClick(object sender, EventArgs e)
         {
-
+            string filePath = $"{Environment.CurrentDirectory}\\{JsonParserFileName}";
+            if (File.Exists(filePath))
+            {
+                Process.Start("java", $"-jar {filePath} {JsonDataFileName}");
+            }
+            else
+            {
+                MessageBox.Show("Не найден компонент, обратитесь к администратору")
+            }
         }
 
 		private void MainForm_Load(object sender, EventArgs e)
