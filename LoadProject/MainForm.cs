@@ -1,8 +1,13 @@
-﻿using System;
+﻿using LoadProject.Entities;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.OleDb;
 using System.Diagnostics;
 using System.IO;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace LoadProject
@@ -50,7 +55,11 @@ namespace LoadProject
 
         private void exportToAccessBtnClick(object sender, EventArgs e)
         {
-
+            var stringJson = File.ReadAllText("C:\\test.json");
+            JObject obj = JObject.Parse(stringJson);
+            var keyValues = JsonConvert.DeserializeObject<IEnumerable<KeyValuePair<string, string>>>(stringJson);
+            KeyValuePair<string, string> facultySection = keyValues.First(k => k.Key == "faculties");
+            var faculties = JsonConvert.DeserializeObject<List<Faculty>>(facultySection.Value);
         }
 
         private void configurationBtnClick(object sender, EventArgs e)
