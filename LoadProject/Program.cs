@@ -13,7 +13,11 @@ namespace LoadProject
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Authorization());
+
+
+            Application.Run(FileProcessor.IsHashFileExisting() ?
+                new Authorization()
+                : new Authorization());     // CHANGE TO EnterNewPassord WINDOW!!!
         }
     }
 }
