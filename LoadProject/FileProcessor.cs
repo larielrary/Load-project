@@ -37,5 +37,12 @@ namespace LoadProject
         {
             return File.Exists($"{Environment.CurrentDirectory}\\{Filename}");
         }
+
+        public static string GetHash(string line)
+        {
+            var md5 = MD5.Create();
+            var hash = md5.ComputeHash(Encoding.UTF8.GetBytes(line));
+            return Convert.ToBase64String(hash);
+        }
     }
 }

@@ -39,7 +39,7 @@ namespace LoadProject
 
             _login = loginTextBox.Text;
             _password = passTextBox.Text;
-            if (GetHash(_login) == creds.Item1 && GetHash(_password) == creds.Item2)
+            if (FileProcessor.GetHash(_login) == creds.Item1 && FileProcessor.GetHash(_password) == creds.Item2)
             {
                 mainForm = new MainForm();
                 mainForm.Show();
@@ -60,12 +60,5 @@ namespace LoadProject
 		{
 
 		}
-
-        public string GetHash(string line)
-        {
-            var md5 = MD5.Create();
-            var hash = md5.ComputeHash(Encoding.UTF8.GetBytes(line));
-            return Convert.ToBase64String(hash);
-        }
     }
 }
