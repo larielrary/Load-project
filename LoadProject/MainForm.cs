@@ -72,7 +72,6 @@ namespace LoadProject
         private void FunctionForExportJsonToAccess()
 		{
             OleDbConnection conn = new OleDbConnection();
-            conn.ConnectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source= C:\Users\tlwhitten\Documents\Database2.accdb";
 
             int CO2 = 50;
             int Temperature = 50;
