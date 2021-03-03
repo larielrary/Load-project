@@ -6,8 +6,6 @@ namespace LoadProject
 {
     public partial class Authorization : Form
     {
-        private const string Filename = "file.txt";
-
         private string _login;
         private string _password;
         MainForm mainForm;
@@ -38,8 +36,6 @@ namespace LoadProject
         public void CheckInputData()
         {
 
-            string readTextFromFile = ReadFile();
-            String[] words = readTextFromFile.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
             string pasFrFile= AesOperation.DecryptString(key, words[1]);
             _login = loginTextBox.Text;
             _password = passTextBox.Text;
@@ -71,29 +67,5 @@ namespace LoadProject
             return encryptedString;
         }
 
-        public void WriteToFile(string login,string password)
-		{
-            string text = login + " " + password;
-            string path = Environment.CurrentDirectory+ $"\\{Filename}";
-            using (FileStream fstream = new FileStream(path, FileMode.Truncate))
-            {
-                byte[] array = System.Text.Encoding.Default.GetBytes(text);
-                fstream.Write(array, 0, array.Length);
-            }
         }
-
-        public string ReadFile()
-		{
-            string textFromFile = string.Empty;
-            string path = Environment.CurrentDirectory;
-            using (FileStream fstream = File.OpenRead($"{path}\\{Filename}"))
-            {
-                byte[] array = new byte[fstream.Length];
-                fstream.Read(array, 0, array.Length);
-                textFromFile = System.Text.Encoding.Default.GetString(array);
-            }
-            return textFromFile;
-		}
-   
-	}
 }
