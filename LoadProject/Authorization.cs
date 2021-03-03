@@ -6,6 +6,8 @@ namespace LoadProject
 {
     public partial class Authorization : Form
     {
+        private const string Filename = "file.txt";
+
         private string _login;
         private string _password;
         MainForm mainForm;
@@ -72,7 +74,7 @@ namespace LoadProject
         public void WriteToFile(string login,string password)
 		{
             string text = login + " " + password;
-            string path = Environment.CurrentDirectory+ "\\file.txt";
+            string path = Environment.CurrentDirectory+ $"\\{Filename}";
             using (FileStream fstream = new FileStream(path, FileMode.Truncate))
             {
                 byte[] array = System.Text.Encoding.Default.GetBytes(text);
@@ -84,7 +86,7 @@ namespace LoadProject
 		{
             string textFromFile = string.Empty;
             string path = Environment.CurrentDirectory;
-            using (FileStream fstream = File.OpenRead($"{path}\\file.txt"))
+            using (FileStream fstream = File.OpenRead($"{path}\\{Filename}"))
             {
                 byte[] array = new byte[fstream.Length];
                 fstream.Read(array, 0, array.Length);
