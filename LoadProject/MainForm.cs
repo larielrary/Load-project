@@ -79,37 +79,36 @@ namespace LoadProject
 
         private void FunctionForExportJsonToAccess()
 		{
-            OleDbConnection conn = new OleDbConnection();
-
-            int CO2 = 50;
-            int Temperature = 50;
-
-            OleDbCommand cmd = new OleDbCommand("INSERT into Data (CO2, Temperature) Values(@CO2, @Temperature)");
-            cmd.Connection = conn;
-
-            conn.Open();
-
-            if (conn.State == ConnectionState.Open)
+            using (OleDbConnection conn = new OleDbConnection(ConnectionString))
             {
-                cmd.Parameters.Add("@CO2", OleDbType.VarChar).Value = CO2;
-                cmd.Parameters.Add("@Temperature", OleDbType.VarChar).Value = Temperature;
+                OleDbCommand cmd = new OleDbCommand("INSERT into TABLE (FIELD1, FIELD2) Values(@Param1Name)", conn);
+                var oleDbParameters = new OleDbParameter[]
+                {
+                    new OleDbParameter("Param1Name", "param1VALUE"),
+                };
+
+                cmd.Parameters.AddRange(oleDbParameters);
+
+                conn.Open();
+
+                if (conn.State != ConnectionState.Open)
+                {
+                    MessageBox.Show("Ошибка открытия соединения с базой данных MS Access");
+                }
 
                 try
                 {
                     cmd.ExecuteNonQuery();
-                    MessageBox.Show("Data Added");
+                    MessageBox.Show("Данные добавлены в MS Access. Открывается файл...");
                     conn.Close();
+                    Process.Start("C:\\database.accdb");
                 }
                 catch (OleDbException ex)
                 {
-                    MessageBox.Show(ex.Source + " POOOOOPY");
+                    MessageBox.Show("Ошибка." + ex.Source);
                     conn.Close();
                 }
-            }
-            else
-            {
-                MessageBox.Show("Connection Failed");
-            }
+            }          
         }
 	}
 }
