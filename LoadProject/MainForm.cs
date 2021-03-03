@@ -11,6 +11,14 @@ namespace LoadProject
     {
         private const string _jsonParserFileName = "JSONParser.jar";
         private const string _jsonDataFileName = "data.json";
+        private const string _connectionStringName = "LocalFileConnectionString";
+
+        private string ConnectionString { get
+            {
+                return System.Configuration.ConfigurationManager
+                    .ConnectionStrings[_connectionStringName].ConnectionString;
+            }
+        }
 
         public MainForm()
         {
@@ -60,7 +68,7 @@ namespace LoadProject
             }
             else
             {
-                MessageBox.Show("Не найден компонент, обратитесь к администратору")
+                MessageBox.Show("Не найден компонент, обратитесь к администратору");
             }
         }
 
