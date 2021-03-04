@@ -52,5 +52,10 @@ namespace LoadProject
             mainForm.Show();
             Hide();
         }
-	}
+
+        private void Configuration_Load(object sender, EventArgs e)
+        {
+
+        }
+    }
 }

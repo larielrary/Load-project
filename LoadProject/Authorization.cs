@@ -1,14 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Reflection;
-using System.Security.Cryptography;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace LoadProject
@@ -21,8 +12,8 @@ namespace LoadProject
         public string key = "b14ca5898a4e4133bbce2ea2315a1916";
         public Authorization()
         {
-             InitializeComponent();
-             WriteToFile("login", Encryption("pass"));
+            InitializeComponent();
+            WriteToFile("login", Encryption("pass"));
 
         }
 
@@ -47,7 +38,7 @@ namespace LoadProject
 
             string readTextFromFile = ReadFile();
             String[] words = readTextFromFile.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
-            string pasFrFile= AesOperation.DecryptString(key, words[1]);
+            string pasFrFile = AesOperation.DecryptString(key, words[1]);
             _login = loginTextBox.Text;
             _password = passTextBox.Text;
             if (_login == words[0] && _password == pasFrFile)
@@ -67,21 +58,21 @@ namespace LoadProject
             }
         }
 
-		private void Authorization_Load(object sender, EventArgs e)
-		{
+        private void Authorization_Load(object sender, EventArgs e)
+        {
 
-		}
+        }
 
         public string Encryption(string password)
-		{
+        {
             var encryptedString = AesOperation.EncryptString(key, password);
             return encryptedString;
         }
 
-        public void WriteToFile(string login,string password)
-		{
+        public void WriteToFile(string login, string password)
+        {
             string text = login + " " + password;
-            string path = Environment.CurrentDirectory+ "\\file.txt";
+            string path = Environment.CurrentDirectory + "\\file.txt";
             using (FileStream fstream = new FileStream(path, FileMode.Truncate))
             {
                 byte[] array = System.Text.Encoding.Default.GetBytes(text);
@@ -90,7 +81,7 @@ namespace LoadProject
         }
 
         public string ReadFile()
-		{
+        {
             string textFromFile = string.Empty;
             string path = Environment.CurrentDirectory;
             using (FileStream fstream = File.OpenRead($"{path}\\file.txt"))
@@ -100,7 +91,7 @@ namespace LoadProject
                 textFromFile = System.Text.Encoding.Default.GetString(array);
             }
             return textFromFile;
-		}
-   
-	}
+        }
+
+    }
 }

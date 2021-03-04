@@ -3,15 +3,9 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Data.OleDb;
 using System.Diagnostics;
-using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace LoadProject
@@ -44,7 +38,7 @@ namespace LoadProject
         private void YearBtnClick(object sender, EventArgs e)
         {
             //запуск exe нагрузки на год
-            System.Diagnostics.Process p = new System.Diagnostics.Process();
+            Process p = new Process();
             p.StartInfo.FileName = $"{Environment.CurrentDirectory}\\publish\\WpfUI.exe";
             p.Start();
         }
@@ -52,9 +46,13 @@ namespace LoadProject
         private void TeacherBtnClick(object sender, EventArgs e)
         {
             //запуск exe нагрузки по преподавателю
-            System.Diagnostics.Process p = new System.Diagnostics.Process();
+            Process p = new System.Diagnostics.Process();
             p.StartInfo.FileName = $"{Environment.CurrentDirectory}\\publish\\WpfUI.exe";
             p.Start();
+        }
+        private void WebsiteBtnClick(object sender, EventArgs e)
+        {
+            MessageBox.Show("Здесь могла бы быть программа Олега");
         }
 
         private void exportToAccessBtnClick(object sender, EventArgs e)
@@ -91,11 +89,20 @@ namespace LoadProject
             string filePath = $"{Environment.CurrentDirectory}\\JSONParser.jar";
             if (File.Exists(filePath))
             {
-                Process.Start("java", $"-jar {filePath} data.json");
+                try
+                {
+                    Process.Start("java", $"-jar {filePath} data.json");
+                }
+                catch (Exception exception)
+                {
+                    MessageBox.Show($"Проблема с загрузкой данных. {exception.Message}. Обратитесь к администратору", "Произошла ошибка",
+                        MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                }
             }
             else
             {
-                MessageBox.Show("Не найден компонент, обратитесь к администратору");
+                MessageBox.Show("Не найден компонент, обратитесь к администратору", "Произошла ошибка",
+                    MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
             }
         }
 
@@ -120,6 +127,7 @@ namespace LoadProject
                 using (conn = new OleDbConnection(ConnectionString))
                 {
                     conn.Open();
+
 
                     try
                     {
@@ -260,9 +268,10 @@ namespace LoadProject
                         MessageBox.Show("Данные добавлены в MS Access. Открывается файл...");
                         Process.Start("C:\\database.accdb");
                     }
-                    catch (OleDbException ex)
+                    catch (Exception ex)
                     {
-                        MessageBox.Show("Ошибка при добавлении данных в MS Access" + ex.Source);
+                        MessageBox.Show("Ошибка при добавлении данных в MS Access" + ex.Source, "Произошла ошибка",
+                            MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
                     }
                     finally
                     {
@@ -270,10 +279,13 @@ namespace LoadProject
                     }
                 }
             }
-            catch (OleDbException ex)
+            catch (Exception ex)
             {
-                MessageBox.Show("Ошибка при открытии базы данных MS Access: " + ex.Source);
+                MessageBox.Show("Ошибка при открытии базы данных MS Access: " + ex.Source, "Произошла ошибка",
+                    MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
             }
         }
+
+        
     }
 }
