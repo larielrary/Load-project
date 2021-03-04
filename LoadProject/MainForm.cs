@@ -55,7 +55,15 @@ namespace LoadProject
 
         private void loadJarBtnClick(object sender, EventArgs e)
         {
-
+            string filePath = $"{Environment.CurrentDirectory}\\data.json";
+            if (File.Exists(filePath))
+            {
+                Process.Start("java", $"-jar {filePath} data.json");
+            }
+            else
+            {
+                MessageBox.Show("Не найден компонент, обратитесь к администратору");
+            }
         }
 
 		private void MainForm_Load(object sender, EventArgs e)
