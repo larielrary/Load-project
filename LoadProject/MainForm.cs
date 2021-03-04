@@ -45,7 +45,7 @@ namespace LoadProject
         {
             //запуск exe нагрузки на год
             System.Diagnostics.Process p = new System.Diagnostics.Process();
-            p.StartInfo.FileName = @"C:\Users\masha\OneDrive\Учеба\4 курс\УРПО\ConsoleApp1\ConsoleApp1\bin\Debug\netcoreapp3.1\ConsoleApp1.exe";
+            p.StartInfo.FileName = $"{Environment.CurrentDirectory}\\publish\\WpfUI.exe";
             p.Start();
         }
 
@@ -53,7 +53,7 @@ namespace LoadProject
         {
             //запуск exe нагрузки по преподавателю
             System.Diagnostics.Process p = new System.Diagnostics.Process();
-            p.StartInfo.FileName = @"C:\Users\masha\OneDrive\Учеба\4 курс\УРПО\ConsoleApp2\ConsoleApp2\bin\Debug\netcoreapp3.1\ConsoleApp2.exe";
+            p.StartInfo.FileName = $"{Environment.CurrentDirectory}\\publish\\WpfUI.exe";
             p.Start();
         }
 
@@ -88,7 +88,7 @@ namespace LoadProject
 
         private void loadJarBtnClick(object sender, EventArgs e)
         {
-            string filePath = $"{Environment.CurrentDirectory}\\data.json";
+            string filePath = $"{Environment.CurrentDirectory}\\JSONParser.jar";
             if (File.Exists(filePath))
             {
                 Process.Start("java", $"-jar {filePath} data.json");
