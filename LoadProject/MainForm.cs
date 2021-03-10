@@ -39,16 +39,32 @@ namespace LoadProject
         {
             //запуск exe нагрузки на год
             Process p = new Process();
-            p.StartInfo.FileName = $"{Environment.CurrentDirectory}\\publish\\WpfUI.exe";
-            p.Start();
+            try
+            {
+                Process.Start("dotnet", $"publish\\IndividualPlanApp.Presentational.dll");
+                p.Start();
+            }
+            catch(Exception exception)
+            {
+                MessageBox.Show($"Проблема с запуском приложения. {exception.Message} Обратитесь к администратору", "Произошла ошибка",
+                        MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+            }
         }
 
         private void TeacherBtnClick(object sender, EventArgs e)
         {
             //запуск exe нагрузки по преподавателю
-            Process p = new System.Diagnostics.Process();
-            p.StartInfo.FileName = $"{Environment.CurrentDirectory}\\publish\\WpfUI.exe";
-            p.Start();
+            Process p = new Process();
+            try
+            {
+                p.StartInfo.FileName = $"{Environment.CurrentDirectory}\\publishA\\WpfUI.exe";
+                p.Start();
+            }
+            catch(Exception exception)
+            {
+                MessageBox.Show($"Проблема с запуском приложения. {exception.Message}. Обратитесь к администратору", "Произошла ошибка",
+                        MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+            }
         }
         private void WebsiteBtnClick(object sender, EventArgs e)
         {
