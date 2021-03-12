@@ -38,17 +38,7 @@ namespace LoadProject
         private void YearBtnClick(object sender, EventArgs e)
         {
             //запуск exe нагрузки на год
-            Process p = new Process();
-            try
-            {
-                Process.Start("dotnet", $"publish\\IndividualPlanApp.Presentational.dll");
-                p.Start();
-            }
-            catch(Exception exception)
-            {
-                MessageBox.Show($"Проблема с запуском приложения. {exception.Message} Обратитесь к администратору", "Произошла ошибка",
-                        MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
-            }
+            Process.Start("dotnet", $"publish\\IndividualPlanApp.Presentational.dll");
         }
 
         private void TeacherBtnClick(object sender, EventArgs e)
@@ -60,7 +50,7 @@ namespace LoadProject
                 p.StartInfo.FileName = $"{Environment.CurrentDirectory}\\publishA\\WpfUI.exe";
                 p.Start();
             }
-            catch(Exception exception)
+            catch (Exception exception)
             {
                 MessageBox.Show($"Проблема с запуском приложения. {exception.Message}. Обратитесь к администратору", "Произошла ошибка",
                         MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
@@ -68,7 +58,8 @@ namespace LoadProject
         }
         private void WebsiteBtnClick(object sender, EventArgs e)
         {
-            MessageBox.Show("Здесь могла бы быть программа Олега");
+            //запуск веб-портала
+            Process.Start("dotnet", $"ProjectO\\ViewDirectory.dll");
         }
 
         private void exportToAccessBtnClick(object sender, EventArgs e)
@@ -302,6 +293,6 @@ namespace LoadProject
             }
         }
 
-        
+
     }
 }
