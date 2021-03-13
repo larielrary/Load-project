@@ -33,6 +33,9 @@
             this.YearLoadBtn = new System.Windows.Forms.Button();
             this.TeacherLoadBtn = new System.Windows.Forms.Button();
             this.exportToAccessBtn = new System.Windows.Forms.Button();
+            this.configurationBtn = new System.Windows.Forms.Button();
+            this.loadJarBtn = new System.Windows.Forms.Button();
+            this.WebsiteBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // ExitBtn
@@ -63,16 +66,41 @@
             this.exportToAccessBtn.UseVisualStyleBackColor = true;
             this.exportToAccessBtn.Click += new System.EventHandler(this.exportToAccessBtnClick);
             // 
+            // configurationBtn
+            // 
+            resources.ApplyResources(this.configurationBtn, "configurationBtn");
+            this.configurationBtn.Name = "configurationBtn";
+            this.configurationBtn.UseVisualStyleBackColor = true;
+            this.configurationBtn.Click += new System.EventHandler(this.configurationBtnClick);
+            // 
+            // loadJarBtn
+            // 
+            resources.ApplyResources(this.loadJarBtn, "loadJarBtn");
+            this.loadJarBtn.Name = "loadJarBtn";
+            this.loadJarBtn.UseVisualStyleBackColor = true;
+            this.loadJarBtn.Click += new System.EventHandler(this.loadJarBtnClick);
+            // 
+            // WebsiteBtn
+            // 
+            resources.ApplyResources(this.WebsiteBtn, "WebsiteBtn");
+            this.WebsiteBtn.Name = "WebsiteBtn";
+            this.WebsiteBtn.UseVisualStyleBackColor = true;
+            this.WebsiteBtn.Click += new System.EventHandler(this.WebsiteBtnClick);
+            // 
             // MainForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ControlBox = false;
+            this.Controls.Add(this.WebsiteBtn);
+            this.Controls.Add(this.loadJarBtn);
+            this.Controls.Add(this.configurationBtn);
             this.Controls.Add(this.exportToAccessBtn);
             this.Controls.Add(this.TeacherLoadBtn);
             this.Controls.Add(this.YearLoadBtn);
             this.Controls.Add(this.ExitBtn);
             this.Name = "MainForm";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.ResumeLayout(false);
 
         }
@@ -83,6 +111,9 @@
         private System.Windows.Forms.Button YearLoadBtn;
         private System.Windows.Forms.Button TeacherLoadBtn;
         private System.Windows.Forms.Button exportToAccessBtn;
+        private System.Windows.Forms.Button configurationBtn;
+        private System.Windows.Forms.Button loadJarBtn;
+        private System.Windows.Forms.Button WebsiteBtn;
     }
 }
 

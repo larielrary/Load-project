@@ -119,14 +119,14 @@
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="ExitBtn.Location" type="System.Drawing.Point, System.Drawing">
-    <value>482, 156</value>
+    <value>545, 270</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="ExitBtn.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 4, 4, 4</value>
   </data>
   <data name="ExitBtn.Size" type="System.Drawing.Size, System.Drawing">
-    <value>94, 37</value>
+    <value>270, 45</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="ExitBtn.TabIndex" type="System.Int32, mscorlib">
@@ -145,16 +145,16 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;ExitBtn.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>6</value>
   </data>
   <data name="YearLoadBtn.Location" type="System.Drawing.Point, System.Drawing">
-    <value>34, 67</value>
+    <value>22, 181</value>
   </data>
   <data name="YearLoadBtn.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 4, 4, 4</value>
   </data>
   <data name="YearLoadBtn.Size" type="System.Drawing.Size, System.Drawing">
-    <value>215, 44</value>
+    <value>388, 44</value>
   </data>
   <data name="YearLoadBtn.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -172,19 +172,19 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;YearLoadBtn.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>5</value>
   </data>
   <data name="TeacherLoadBtn.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="TeacherLoadBtn.Location" type="System.Drawing.Point, System.Drawing">
-    <value>305, 67</value>
+    <value>22, 107</value>
   </data>
   <data name="TeacherLoadBtn.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 4, 4, 4</value>
   </data>
   <data name="TeacherLoadBtn.Size" type="System.Drawing.Size, System.Drawing">
-    <value>271, 44</value>
+    <value>388, 44</value>
   </data>
   <data name="TeacherLoadBtn.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -202,13 +202,16 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;TeacherLoadBtn.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>4</value>
   </data>
   <data name="exportToAccessBtn.Location" type="System.Drawing.Point, System.Drawing">
-    <value>34, 135</value>
+    <value>428, 181</value>
+  </data>
+  <data name="exportToAccessBtn.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
   </data>
   <data name="exportToAccessBtn.Size" type="System.Drawing.Size, System.Drawing">
-    <value>215, 44</value>
+    <value>388, 44</value>
   </data>
   <data name="exportToAccessBtn.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -226,6 +229,96 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;exportToAccessBtn.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="configurationBtn.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="configurationBtn.Location" type="System.Drawing.Point, System.Drawing">
+    <value>545, 11</value>
+  </data>
+  <data name="configurationBtn.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="configurationBtn.Size" type="System.Drawing.Size, System.Drawing">
+    <value>270, 44</value>
+  </data>
+  <data name="configurationBtn.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="configurationBtn.Text" xml:space="preserve">
+    <value>Изменить конфигурацию</value>
+  </data>
+  <data name="&gt;&gt;configurationBtn.Name" xml:space="preserve">
+    <value>configurationBtn</value>
+  </data>
+  <data name="&gt;&gt;configurationBtn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;configurationBtn.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;configurationBtn.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="loadJarBtn.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="loadJarBtn.Location" type="System.Drawing.Point, System.Drawing">
+    <value>428, 107</value>
+  </data>
+  <data name="loadJarBtn.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="loadJarBtn.Size" type="System.Drawing.Size, System.Drawing">
+    <value>388, 44</value>
+  </data>
+  <data name="loadJarBtn.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="loadJarBtn.Text" xml:space="preserve">
+    <value>Загрузить данные</value>
+  </data>
+  <data name="&gt;&gt;loadJarBtn.Name" xml:space="preserve">
+    <value>loadJarBtn</value>
+  </data>
+  <data name="&gt;&gt;loadJarBtn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;loadJarBtn.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;loadJarBtn.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="WebsiteBtn.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="WebsiteBtn.Location" type="System.Drawing.Point, System.Drawing">
+    <value>22, 35</value>
+  </data>
+  <data name="WebsiteBtn.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="WebsiteBtn.Size" type="System.Drawing.Size, System.Drawing">
+    <value>388, 44</value>
+  </data>
+  <data name="WebsiteBtn.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="WebsiteBtn.Text" xml:space="preserve">
+    <value>Информационный портал</value>
+  </data>
+  <data name="&gt;&gt;WebsiteBtn.Name" xml:space="preserve">
+    <value>WebsiteBtn</value>
+  </data>
+  <data name="&gt;&gt;WebsiteBtn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;WebsiteBtn.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;WebsiteBtn.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -235,7 +328,7 @@
     <value>10, 28</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>614, 214</value>
+    <value>838, 346</value>
   </data>
   <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe Print, 9.75pt</value>

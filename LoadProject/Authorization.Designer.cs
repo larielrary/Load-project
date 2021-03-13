@@ -38,10 +38,10 @@
             // 
             // loginTextBox
             // 
-            this.loginTextBox.Location = new System.Drawing.Point(33, 50);
+            this.loginTextBox.Location = new System.Drawing.Point(33, 44);
             this.loginTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.loginTextBox.Name = "loginTextBox";
-            this.loginTextBox.Size = new System.Drawing.Size(132, 30);
+            this.loginTextBox.Size = new System.Drawing.Size(191, 36);
             this.loginTextBox.TabIndex = 0;
             // 
             // passTextBox
@@ -50,34 +50,34 @@
             this.passTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.passTextBox.Name = "passTextBox";
             this.passTextBox.PasswordChar = '*';
-            this.passTextBox.Size = new System.Drawing.Size(132, 30);
+            this.passTextBox.Size = new System.Drawing.Size(191, 36);
             this.passTextBox.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(73, 22);
+            this.label1.Location = new System.Drawing.Point(100, 9);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(50, 23);
+            this.label1.Size = new System.Drawing.Size(65, 30);
             this.label1.TabIndex = 2;
             this.label1.Text = "Логин";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(73, 98);
+            this.label2.Location = new System.Drawing.Point(89, 102);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(58, 23);
+            this.label2.Size = new System.Drawing.Size(76, 30);
             this.label2.TabIndex = 3;
             this.label2.Text = "Пароль";
             // 
             // InputBtn
             // 
-            this.InputBtn.Location = new System.Drawing.Point(12, 191);
+            this.InputBtn.Location = new System.Drawing.Point(12, 205);
             this.InputBtn.Name = "InputBtn";
-            this.InputBtn.Size = new System.Drawing.Size(75, 31);
+            this.InputBtn.Size = new System.Drawing.Size(96, 40);
             this.InputBtn.TabIndex = 4;
             this.InputBtn.Text = "Войти";
             this.InputBtn.UseVisualStyleBackColor = true;
@@ -85,9 +85,9 @@
             // 
             // ExitBtn
             // 
-            this.ExitBtn.Location = new System.Drawing.Point(108, 191);
+            this.ExitBtn.Location = new System.Drawing.Point(149, 205);
             this.ExitBtn.Name = "ExitBtn";
-            this.ExitBtn.Size = new System.Drawing.Size(75, 31);
+            this.ExitBtn.Size = new System.Drawing.Size(91, 40);
             this.ExitBtn.TabIndex = 5;
             this.ExitBtn.Text = "Выход";
             this.ExitBtn.UseVisualStyleBackColor = true;
@@ -95,9 +95,9 @@
             // 
             // Authorization
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 23F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(207, 245);
+            this.ClientSize = new System.Drawing.Size(252, 290);
             this.ControlBox = false;
             this.Controls.Add(this.ExitBtn);
             this.Controls.Add(this.InputBtn);
@@ -109,6 +109,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Authorization";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Load += new System.EventHandler(this.Authorization_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -122,5 +123,5 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button InputBtn;
         private System.Windows.Forms.Button ExitBtn;
-    }
+	}
 }
